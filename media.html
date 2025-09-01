@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Media</title>
+  </head>
+  <body>
+    <h1>Responsive Image Test</h1>
+
+    <picture>
+      <!-- Mobile -->
+      <source media="(max-width: 600px)" srcset="./assets/image/abdul_mobile.jpg" />
+      
+      <!-- Tablet -->
+      <source media="(max-width: 1024px)" srcset="./assets/image/abdul_tablet_hq.jpg" />
+      
+      <!-- Desktop -->
+      <source media="(min-width: 1025px)" srcset="./assets/image/abdul_desktop.jpg" />
+
+      <!-- Fallback image -->
+      <img src="./assets/image/abdul_desktop_hq.jpg" alt="responsive image" />
+    </picture>
+
+    <br><br>
+
+    <h2>Audio Player</h2>
+    <audio src="./assets/audio/your-audio.mp3" controls></audio>
+
+    <h2>Video Player</h2>
+    <video src="./assets/video/tired.mp4" controls width="400"></video>
+  </body>
+</html>
