@@ -1,0 +1,65 @@
+:root{
+}
+.profile-grid{
+display:grid;
+grid-template-columns:120px 1fr;
+gap:20px;
+align-items:center;
+background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.9));
+padding:18px;
+border-radius:12px;
+border:1px solid rgba(15,23,42,0.04);
+box-shadow:0 6px 18px rgba(2,6,23,0.04);
+}
+.avatar{
+width:120px;
+height:120px;
+background:linear-gradient(135deg,var(--accent),#8b5cf6);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:700;
+font-size:28px;
+box-shadow:0 6px 12px rgba(59,130,246,0.18);
+}
+.intro h1{margin:0 0 8px 0;font-size:20px}
+.intro .name{margin:0;color:var(--muted);line-height:1.5}
+
+
+.cards{
+margin-top:18px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+.card{
+background:var(--card);
+padding:16px;
+border-radius:10px;
+border:1px solid rgba(15,23,42,0.04);
+min-height:120px;
+}
+.card h2{margin-top:0;margin-bottom:8px}
+.card p, .card li{color:var(--muted);margin:0 0 8px 0}
+
+
+.footer{max-width:1000px;margin:14px auto;text-align:center;color:var(--muted);font-size:14px}
+
+
+/* Responsive: stack on small screens */
+@media (max-width:700px){
+.profile-grid{grid-template-columns:88px 1fr}
+.cards{grid-template-columns:1fr;}
+.avatar{width:88px;height:88px;font-size:20px}
+}
+
+
+/* small polish */
+h1,h2{font-weight:600}
+ul{padding-left:18px}
+
+
+/* Accessibility focus styles */
+:focus{outline:3px solid rgba(59,130,246,0.18);outline-offset:3px}
