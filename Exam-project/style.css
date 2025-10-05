@@ -1,0 +1,136 @@
+/* style.css - clean, responsive styling for the stopwatch */
+
+:root{
+  --bg: #0f1724;
+  --card: #071126;
+  --accent: #06b6d4;
+  --accent-2: #8b5cf6;
+  --text: #e6eef6;
+  --muted: #9aa7b5;
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg,#071021,#071a2a);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* Card */
+.card{
+  width:min(560px,96%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:22px;
+  border-radius:12px;
+  border:1px solid var(--glass);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+  display:grid;
+  gap:14px;
+  justify-items:center;
+}
+
+/* Display (digital look) */
+.display{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.12);
+  padding:14px 18px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.02);
+}
+.time{
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: clamp(28px, 6vw, 48px);
+  letter-spacing:2px;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+/* Controls */
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:100%;
+}
+.btn{
+  border:0;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  min-width:84px;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.18);
+}
+.btn:active{ transform: translateY(1px) }
+.btn:disabled{ opacity:.55; cursor:not-allowed; box-shadow:none }
+
+.start{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#041826;
+}
+.start:hover:not(:disabled){ transform:translateY(-2px); box-shadow: 0 14px 40px rgba(6,182,212,0.14) }
+
+.stop{
+  background: rgba(255,255,255,0.04);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.reset{
+  background: transparent;
+  color:var(--muted);
+  border:1px dashed rgba(255,255,255,0.04);
+}
+.lap{
+  background: linear-gradient(90deg, rgba(139,92,246,0.08), rgba(6,182,212,0.06));
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Laps list */
+.laps-list{
+  width:100%;
+  margin-top:8px;
+  list-style:none;
+  max-height:160px;
+  overflow:auto;
+  padding-left:12px;
+}
+.laps-list li{
+  padding:8px 10px;
+  border-radius:8px;
+  background: rgba(255,255,255,0.02);
+  margin-bottom:8px;
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Meta text */
+.meta{ font-size:13px; color:var(--muted); text-align:center }
+
+/* Accessibility helper */
+.visually-hidden{
+  position:absolute!important;
+  height:1px;width:1px;
+  overflow:hidden;clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+/* Responsive */
+@media (max-width:420px){
+  .btn{ min-width:72px; padding:9px 12px }
+  .card{ padding:16px }
+}

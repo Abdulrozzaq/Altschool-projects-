@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stopwatch — Deliverable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stopwatch" role="main" aria-labelledby="title">
+    <h1 id="title" class="visually-hidden">Stopwatch</h1>
+
+    <section class="card">
+      <div class="display" aria-live="polite" aria-atomic="true">
+        <span id="time" class="time">00:00:00</span>
+      </div>
+
+      <div class="controls" role="group" aria-label="Stopwatch controls">
+        <button id="startBtn" class="btn start" type="button">Start</button>
+        <button id="stopBtn"  class="btn stop"  type="button" disabled>Stop</button>
+        <button id="resetBtn" class="btn reset" type="button" disabled>Reset</button>
+        <!-- Optional bonus feature: Lap -->
+        <button id="lapBtn"   class="btn lap"   type="button" disabled>Lap</button>
+      </div>
+
+      <div class="meta">HH:MM:SS — Accurate timing using <code>performance.now()</code></div>
+
+      <section class="laps" aria-labelledby="lapsHeading">
+        <h2 id="lapsHeading" class="visually-hidden">Laps</h2>
+        <ol id="lapsList" class="laps-list" aria-live="polite"></ol>
+      </section>
+    </section>
+  <script src="script.js"></script>
+</body>
+</html>
